@@ -1,0 +1,18 @@
+import json
+import boto3
+s3 = boto3.client(&#39;s3&#39;) # Create an S3 client
+def lambda_handler(event, context):
+bucket = &#39;prajyotibucket1234&#39; # Define your S3 bucket name
+dataToUpload = {} # Initialize an empty dictionary
+# Add key-value pairs to the dictionary
+dataToUpload[&#39;PID&#39;] = &#39;1400&#39;
+dataToUpload[&#39;DEPT&#39;] = &#39;INFT&#39;
+dataToUpload[&#39;NAME&#39;] = &#39;PRAJYOTI&#39;
+dataToUpload[&#39;FILE&#39;] = &#39;ABC 1111&#39;
+# Define the filename, adding the .json extension
+fileName = &#39;ABC 1111&#39; + &#39;.json&#39;
+# Convert the dataToUpload dictionary to a JSON byte stream
+uploadByteStream = bytes(json.dumps(dataToUpload).encode(&#39;UTF-8&#39;))
+# Upload the JSON byte stream to S3
+s3.put_object(Bucket=bucket, Key=fileName, Body=uploadByteStream)
+print(f&quot;Object has been uploaded to {bucket} with key {fileName}&quot;)
