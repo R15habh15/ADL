@@ -1,0 +1,24 @@
+sonar.projectKey=Python_test
+sonar.projectName=PythonTest
+sonar.projectVersion=1.0
+sonar.sources=.
+sonar.host.url=http://localhost:9000
+sonar.token=YOUR_TOKEN_HERE
+
+
+sonar.projectKey=Html_test
+sonar.projectName=HTMLTest
+sonar.projectVersion=1.0
+sonar.sources=.
+sonar.inclusions=**/*.html, **/*.css, **/*.js
+sonar.host.url=http://localhost:9000
+sonar.token=YOUR_TOKEN_HERE
+
+
+sonar.projectKey=Java_test
+sonar.projectName=JavaTest
+sonar.projectVersion=1.0
+sonar.sources=src
+sonar.exclusions=**/*.class
+sonar.host.url=http://localhost:9000
+sonar.token=YOUR_TOKEN_HERE
